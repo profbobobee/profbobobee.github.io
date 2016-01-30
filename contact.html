@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- Website cassavauprooter.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Contact - TEK Mechanical Cassava Havester</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.png" alt="LOGO" height="112" width="118"></a>
+				</div>
+				<div id="navigation">
+					<ul>
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="about.html">Challenges</a>
+						</li>
+						<li>
+							<a href="rooms.html">Opportunity</a>
+						</li>
+						<li>
+							<a href="dives.html">Future</a>
+						</li>
+						<li>
+							<a href="foods.html">Gallery</a>
+						</li>
+						<li>
+							<a href="news.html">About</a>
+						</li>
+						
+						<li class="selected">
+							<a href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+<?php
+//if "email" variable is filled out, send email
+  if (isset($_REQUEST['email']))  {
+  
+  //Email information
+  $admin_email = "dzukeyg@gmail.com";
+  $name = $_REQUEST ['visitor'];
+  $country= $_REQUEST['country'];
+  $email = $_REQUEST['email'];
+  $subject = $_REQUEST['subject'];
+  $comment = $_REQUEST['comment'];
+  
+  //send email
+  mail($admin_email, $subject, $comment, "From:" . $email, $name, $country);
+  
+  //Email response
+  echo "Thank you for contacting us!";
+  }
+  
+  //if "email" variable is not filled out, display the form
+  else  {
+?>
+
+			
+			
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div id="contact" class="body">
+							<h1>Contact</h1>
+							<form  method="post">
+								<table>
+									<tbody>
+										<tr>
+											<td>Name:</td>
+											<td><input name="visitor" type="text" value="" class="txtfield"></td>
+										</tr><tr>
+											<td>Country:</td>
+											<td><input name="country" type="text" value="" class="txtfield"></td>
+										</tr> <tr>
+											<td>Email:</td>
+											<td><input name="email" type="text" value="" class="txtfield"></td>
+										</tr> <tr>
+											<td>Subject:</td>
+											<td><input name="subject" type="text" value="" class="txtfield"></td>
+										</tr> <tr>
+											<td name="comment" class="txtarea">Message:</td>
+											<td><textarea></textarea></td>
+										</tr> <tr>
+											<td></td>
+											<td><input type="submit" value="" class="btn"></td>
+										</tr>
+									</tbody>
+								</table>
+							</form>
+							
+							<h2>TEK Mechanical Cassava Harvester</h2>
+							<p>
+								<span>Address:</span> Prof E.Y.H Bobobee<br />Department of Agricultural Engineering<br />Kwame Nkrumah Univ. of Sci. & Tech (KNUST)<br /> PMB, Kumasi. GHANA
+
+							</p>
+							<p>
+								<span>Telephone Number:</span> +233(0)245431872
+							</p>
+							<p>
+								<span>Email:</span>emmanuel.bobobee@gmail.com <br />tekmech.harvester@gmail.com
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<ul class="navigation">
+					<li>
+						<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="about.html">Challenges</a>
+						</li>
+						<li>
+							<a href="rooms.html">Opportunity</a>
+						</li>
+						<li>
+							<a href="dives.html">Future</a>
+						</li>
+						<li>
+							<a href="foods.html">Gallery</a>
+						</li>
+						<li>
+							<a href="news.html">About</a>
+						</li>
+						<li class="active">
+							<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+				<?php
+  }
+?>
+				<div id="connect">
+							<a href=" " target="_blank" class="pinterest"></a> <a href=" " target="_blank" class="facebook"></a> <a href="http:// " target="_blank" class="twitter"></a> <a href="http:// " target="_blank" class="googleplus"></a>
+				</div>
+			</div>
+			<p>
+				© 2016 by TEK Mechanical Cassava Harvester. All Rights Reserved
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>
